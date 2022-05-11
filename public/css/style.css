@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600&family=Righteous&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fb6b6b;
+  font-family: "Righteous", cursive;
+  height: 100vh;
+}
+
+.boas-vindas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.boas-vindas img {
+  width: 136px;
+  height: 161px;
+}
+.boas-vindas h1 {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+  width: 257px;
+  height: 59px;
+  margin: 25px 0;
+}
+.boas-vindas button {
+  width: 246px;
+  height: 54px;
+  border: 1px solid #d70900;
+  border-radius: 5px;
+}
+.boas-vindas button p {
+  font-size: 18px;
+  color: #d70900;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #fb6b6b;
+}
+header {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+  margin-top: 90px;
+}
+header img {
+  width: 52px;
+  height: 60px;
+}
+header h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-left: 24px;
+}
+.perguntas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+.pergunta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.pergunta button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 300px;
+  height: 65px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000;
+}
+.pergunta button p {
+  font-size: 18px;
+}
+.pergunta button ion-icon {
+  font-size: 24px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 70px;
+  background-color: #ddd;
+}
+footer span {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard {
+  position: relative;
+  width: 299px;
+  height: 131px;
+  background-color: #ffffd4;
+  margin-bottom: 25px;
+}
+.flashcard p {
+  padding: 25px;
+  font-size: 18px;
+  font-family: "Recursive", sans-serif;
+}
+.respostas {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.respostas button {
+  font-family: "Recursive", sans-serif;
+  color: white;
+  width: 84px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.virar-flashcard img {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  width: 27px;
+  height: 20px;
+}
+.nao-lembrei {
+  background-color: #d70900;
+}
+.quase-nao-lembrei {
+  background-color: #ff922e;
+}
+.zap {
+  background-color: #2fbe34;
+}
+.invisivel {
+  display: none;
+}
