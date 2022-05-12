@@ -3,18 +3,14 @@
   box-sizing: border-box;
   font-family: "Righteous", cursive;
 }
-body {
-  width: 100%;
-  height: 100%;
-}
-.root {
+
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fb6b6b;
   font-family: "Righteous", cursive;
-  height: 100vh;
 }
 
 .boas-vindas {
@@ -22,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 .boas-vindas img {
   width: 136px;
@@ -58,7 +55,7 @@ header {
   display: flex;
   align-items: center;
   margin: 50px 0;
-  margin-top: 90px;
+  margin-top: 50px;
 }
 header img {
   width: 52px;
@@ -83,7 +80,6 @@ header h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 25px;
 }
 .pergunta button {
   display: flex;
@@ -104,6 +100,7 @@ header h1 {
 .pergunta button ion-icon {
   font-size: 24px;
 }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -111,27 +108,59 @@ footer {
   width: 100%;
   height: 70px;
   background-color: #ddd;
-}
-footer span {
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
+
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.concluidos {
+  width: 100%;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Recursive", sans-serif;
+}
+
+.icones-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 23px;
+}
+.icones-footer ion-icon {
+  font-size: 23px;
+}
+.pergunta-deck {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25px;
+}
 .flashcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   position: relative;
   width: 299px;
   height: 131px;
   background-color: #ffffd4;
-  margin-bottom: 25px;
+  margin: 15px auto;
+}
+.answer {
+  height: 151px;
 }
 .flashcard p {
-  padding: 25px;
+  padding: 10px 10px 20px 10px;
   font-size: 18px;
   font-family: "Recursive", sans-serif;
+  text-align: left;
 }
 .respostas {
   display: flex;
@@ -155,6 +184,7 @@ footer span {
   width: 27px;
   height: 20px;
 }
+
 .nao-lembrei {
   background-color: #d70900;
 }

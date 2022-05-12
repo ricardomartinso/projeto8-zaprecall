@@ -1,9 +1,9 @@
-export default function BoasVindas() {
+export default function BoasVindas({ changeTela }) {
   return (
-    <div class="boas-vindas invisivel">
+    <div className="boas-vindas">
       <img src="./assets/logo.png" alt="Logo zaprecall" />
       <h1>ZapRecall</h1>
-      <button>
+      <button onClick={changeTela}>
         <p>Iniciar Recall!</p>
       </button>
     </div>
