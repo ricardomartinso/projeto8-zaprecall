@@ -58,14 +58,30 @@ export default function Perguntas() {
 
 function PerguntaDeck(props) {
   const [pergunta, setPergunta] = React.useState("pergunta");
+  const [cor, setCor] = React.useState("red");
+  const [icone, setIcone] = React.useState("close-circle-outline");
+  const [corPergunta, setCorPergunta] = React.useState("tachado-vermelho");
 
-  function mudarEstadoPergunta(estado) {
+  function mudarEstadoPergunta(estado, acerto) {
     if (estado === "pergunta") {
       setPergunta("question");
     } else if (estado === "question") {
       setPergunta("resposta");
-    } else if (estado === "resposta") {
+    } else if (estado === "resposta" && acerto === "errado") {
       setPergunta("respondido");
+      setCorPergunta("tachado-vermelho");
+      setCor("red");
+      setIcone("close-circle-outline");
+    } else if (estado === "resposta" && acerto === "certo") {
+      setPergunta("respondido");
+      setCorPergunta("tachado-verde");
+      setCor("green");
+      setIcone("checkmark-circle-outline");
+    } else if (estado === "resposta" && acerto === "quase") {
+      setPergunta("respondido");
+      setCorPergunta("tachado-laranja");
+      setCor("orange");
+      setIcone("help-circle-outline");
     }
   }
   return (
@@ -86,9 +102,11 @@ function PerguntaDeck(props) {
           mudarEstadoPergunta={mudarEstadoPergunta}
         />
       ) : (
-        <Pergunta
+        <PerguntaRespondida
           numeracao={props.numeracao}
-          mudarEstadoPergunta={mudarEstadoPergunta}
+          botao={corPergunta}
+          cor={cor}
+          icone={icone}
         />
       )}
     </div>
@@ -98,7 +116,7 @@ function Pergunta(props) {
   return (
     <div className="pergunta">
       <button onClick={() => props.mudarEstadoPergunta("pergunta")}>
-        <p>Pergunta {props.numeracao}</p>
+        <p className={props.botao}>Pergunta {props.numeracao}</p>
         <ion-icon name="play-outline"></ion-icon>
       </button>
     </div>
@@ -125,17 +143,35 @@ function FlashcardAnswer(props) {
         <button
           name="nao-lembrei"
           className="nao-lembrei"
-          onClick={() => props.mudarEstadoPergunta("resposta")}
+          onClick={() => props.mudarEstadoPergunta("resposta", "errado")}
         >
           Não lembrei
         </button>
-        <button name="quase-nao-lembrei" className="quase-nao-lembrei">
+        <button
+          name="quase-nao-lembrei"
+          className="quase-nao-lembrei"
+          onClick={() => props.mudarEstadoPergunta("resposta", "quase")}
+        >
           Quase não lembrei!
         </button>
-        <button name="zap" className="zap">
+        <button
+          name="zap"
+          className="zap"
+          onClick={() => props.mudarEstadoPergunta("resposta", "certo")}
+        >
           Zap!
         </button>
       </div>
+    </div>
+  );
+}
+function PerguntaRespondida(props) {
+  return (
+    <div className="pergunta">
+      <button>
+        <p className={props.botao}>Pergunta {props.numeracao}</p>
+        <ion-icon name={props.icone} style={{ color: props.cor }}></ion-icon>
+      </button>
     </div>
   );
 }

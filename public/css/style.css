@@ -187,6 +187,19 @@ footer {
   height: 20px;
 }
 
+.tachado-vermelho {
+  color: red;
+  text-decoration: line-through;
+}
+.tachado-verde {
+  color: #2fbe34;
+  text-decoration: line-through;
+}
+.tachado-laranja {
+  color: #ff922e;
+  text-decoration: line-through;
+}
+
 .nao-lembrei {
   background-color: #d70900;
 }
