@@ -1,6 +1,11 @@
 import Perguntas from "./Perguntas";
+import Footer from "./Footer";
+import Icones from "./Icones";
+import React from "react";
 
 export default function Conteudo() {
+  const [icone, setIcone] = React.useState("checkmark-circle-outline");
+
   return (
     <div className="conteudo">
       <header>
@@ -10,21 +15,9 @@ export default function Conteudo() {
 
       <Perguntas />
 
-      <footer>
-        <div className="concluidos">
-          <p>0/8 concluidos</p>
-        </div>
-        <div className="icones-footer invisivel">
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <ion-icon name="close-circle-outline"></ion-icon>
-        </div>
-      </footer>
+      <Footer>
+        <Icones icone={icone} />
+      </Footer>
     </div>
   );
 }

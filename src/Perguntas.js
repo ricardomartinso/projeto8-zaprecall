@@ -64,6 +64,8 @@ function PerguntaDeck(props) {
       setPergunta("question");
     } else if (estado === "question") {
       setPergunta("resposta");
+    } else if (estado === "resposta") {
+      setPergunta("respondido");
     }
   }
   return (
@@ -78,8 +80,16 @@ function PerguntaDeck(props) {
           pergunta={props.pergunta}
           mudarEstadoPergunta={mudarEstadoPergunta}
         />
+      ) : pergunta === "resposta" ? (
+        <FlashcardAnswer
+          resposta={props.resposta}
+          mudarEstadoPergunta={mudarEstadoPergunta}
+        />
       ) : (
-        <FlashcardAnswer resposta={props.resposta} />
+        <Pergunta
+          numeracao={props.numeracao}
+          mudarEstadoPergunta={mudarEstadoPergunta}
+        />
       )}
     </div>
   );
@@ -112,7 +122,11 @@ function FlashcardAnswer(props) {
     <div className="flashcard answer">
       <p>{props.resposta}</p>
       <div className="respostas">
-        <button name="nao-lembrei" className="nao-lembrei">
+        <button
+          name="nao-lembrei"
+          className="nao-lembrei"
+          onClick={() => props.mudarEstadoPergunta("resposta")}
+        >
           Não lembrei
         </button>
         <button name="quase-nao-lembrei" className="quase-nao-lembrei">

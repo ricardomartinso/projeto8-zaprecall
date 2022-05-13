@@ -157,6 +157,8 @@ footer {
   height: 151px;
 }
 .flashcard p {
+  width: 100%;
+  word-break: break-word;
   padding: 10px 10px 20px 10px;
   font-size: 18px;
   font-family: "Recursive", sans-serif;
