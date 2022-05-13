@@ -1,5 +1,6 @@
 import React from "react";
-export default function Perguntas() {
+
+export default function Perguntas(props) {
   function embaralhar() {
     return Math.random() - 0.5;
   }
@@ -49,6 +50,7 @@ export default function Perguntas() {
             numeracao={index + 1}
             pergunta={card.pergunta}
             resposta={card.resposta}
+            adicionarIcone={props.adicionarIcone}
           />
         );
       })}
@@ -70,18 +72,21 @@ function PerguntaDeck(props) {
     } else if (estado === "resposta" && acerto === "errado") {
       setPergunta("respondido");
       setCorPergunta("tachado-vermelho");
-      setCor("red");
       setIcone("close-circle-outline");
+      setCor("red");
+      props.adicionarIcone("red", "close-circle-outline");
     } else if (estado === "resposta" && acerto === "certo") {
       setPergunta("respondido");
       setCorPergunta("tachado-verde");
-      setCor("green");
       setIcone("checkmark-circle-outline");
+      setCor("green");
+      props.adicionarIcone("checkmark-circle-outline", "green");
     } else if (estado === "resposta" && acerto === "quase") {
       setPergunta("respondido");
       setCorPergunta("tachado-laranja");
-      setCor("orange");
       setIcone("help-circle-outline");
+      setCor("orange");
+      props.adicionarIcone("help-circle-outline", "orange");
     }
   }
   return (
