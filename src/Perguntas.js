@@ -50,7 +50,9 @@ export default function Perguntas(props) {
             numeracao={index + 1}
             pergunta={card.pergunta}
             resposta={card.resposta}
-            adicionarIcone={props.adicionarIcone}
+            adicionarIcone={props.function}
+            contador={props.contador}
+            icones={props.icones}
           />
         );
       })}
@@ -72,23 +74,27 @@ function PerguntaDeck(props) {
     } else if (estado === "resposta" && acerto === "errado") {
       setPergunta("respondido");
       setCorPergunta("tachado-vermelho");
-      setIcone("close-circle-outline");
+      setIcone("close-circle");
       setCor("red");
-      props.adicionarIcone("red", "close-circle-outline");
+      props.adicionarIcone("close-circle", "red");
+      props.contador();
     } else if (estado === "resposta" && acerto === "certo") {
       setPergunta("respondido");
       setCorPergunta("tachado-verde");
-      setIcone("checkmark-circle-outline");
+      setIcone("checkmark-circle");
       setCor("green");
-      props.adicionarIcone("checkmark-circle-outline", "green");
+      props.adicionarIcone("checkmark-circle", "green");
+      props.contador();
     } else if (estado === "resposta" && acerto === "quase") {
       setPergunta("respondido");
       setCorPergunta("tachado-laranja");
-      setIcone("help-circle-outline");
+      setIcone("help-circle");
       setCor("orange");
-      props.adicionarIcone("help-circle-outline", "orange");
+      props.adicionarIcone("help-circle", "orange");
+      props.contador();
     }
   }
+
   return (
     <div className="pergunta-deck">
       {pergunta === "pergunta" ? (
