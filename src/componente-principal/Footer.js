@@ -2,7 +2,7 @@ export default function Footer(props) {
   return (
     <footer>
       <div className="resultado">
-        {props.resultado} <img src={props.imagem} alt="" />
+        {props.resultado} <img src={props.imagem} />
       </div>
       <div className="resultado-texto">{props.textoResultado}</div>
       <div className="concluidos">

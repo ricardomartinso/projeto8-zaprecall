@@ -1,7 +1,10 @@
-import Perguntas from "./Perguntas";
+import Perguntas from "../componente-perguntas/Perguntas";
 import Footer from "./Footer";
-import Icones from "./Icones";
+import Icones from "../componente-icons/Icones";
 import React from "react";
+import logoPequeno from "../assets/logo-pequeno.png";
+import sad from "../assets/sad.png";
+import party from "../assets/sad.png";
 
 export default function Conteudo(props) {
   let [icones, setIcones] = React.useState([]);
@@ -28,17 +31,17 @@ export default function Conteudo(props) {
     if (checador.length >= 1) {
       setResultado("Putz...");
       setTextoResultado("Tente novamente na próxima");
-      setImagem("./assets/sad.png");
+      setImagem(sad);
     } else {
       setResultado("Parabéns!!!");
       setTextoResultado("Você nao esqueceu nenhum card!");
-      setImagem("./assets/party.png");
+      setImagem(party);
     }
   }
   return (
     <div className="conteudo">
       <header>
-        <img src="./assets/logo-pequeno.png" alt="Logo zaprecall" />
+        <img src={logoPequeno} alt="Logo zaprecall" />
         <h1>ZapRecall</h1>
       </header>
 
