@@ -4,7 +4,7 @@ import Icones from "../componente-icons/Icones";
 import React from "react";
 import logoPequeno from "../assets/logo-pequeno.png";
 import sad from "../assets/sad.png";
-import party from "../assets/sad.png";
+import party from "../assets/party.png";
 
 export default function Conteudo(props) {
   let [icones, setIcones] = React.useState([]);

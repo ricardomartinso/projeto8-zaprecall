@@ -24,8 +24,7 @@ export default function Perguntas(props) {
     },
     {
       pergunta: "O ReactDOM nos ajuda __",
-      resposta:
-        "5. interagindo com a DOM para colocar componentes React na mesma",
+      resposta: "interagindo com a DOM para colocar componentes React na mesma",
     },
     {
       pergunta: "Usamos o npm para __",
@@ -41,6 +40,10 @@ export default function Perguntas(props) {
         "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     },
   ];
+  function embaralhado() {
+    flashcard.sort(embaralhar);
+    console.log(flashcard);
+  }
 
   return (
     <div className="perguntas">
