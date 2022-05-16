@@ -5,7 +5,7 @@ export default function Perguntas(props) {
   function embaralhar() {
     return Math.random() - 0.5;
   }
-  const flashcard = [
+  const testeFlashcard = [
     {
       pergunta: "O que é Jsx?",
       resposta: "Uma extensão de linguagem do JavaScript",
@@ -40,14 +40,13 @@ export default function Perguntas(props) {
         "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
     },
   ];
-  function embaralhado() {
-    flashcard.sort(embaralhar);
-    console.log(flashcard);
-  }
+  const embaralhado = testeFlashcard.sort(embaralhar);
+
+  const [flashcard, setFlashcard] = React.useState(embaralhado);
 
   return (
     <div className="perguntas">
-      {flashcard.sort(embaralhar).map(function (card, index) {
+      {flashcard.map(function (card, index) {
         return (
           <PerguntaDeck
             key={index}

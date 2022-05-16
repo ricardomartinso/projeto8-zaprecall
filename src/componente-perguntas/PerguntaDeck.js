@@ -74,6 +74,7 @@ function Pergunta(props) {
     </div>
   );
 }
+
 function FlashcardQuestion(props) {
   return (
     <div className="flashcard question">
